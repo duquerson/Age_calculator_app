@@ -1,1 +1,37 @@
 @import "tailwindcss";
+@font-face {
+	font-family: "Poppins";
+	src: url("../assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Poppins";
+	src: url("../assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Poppins";
+	src: url("../assets/fonts/Poppins-Italic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@theme{
+	/*colors*/
+	--primary-purple: hsl(259, 100%, 65%);
+	--primary-red: hsl(0, 100%, 67%);
+	--neutral-white: hsl(0, 0%, 100%);
+	--neutral-off-white: hsl(0, 0%, 94%);
+	--neutral-light-gray: hsl(0, 0%, 86%);
+	--neutral-smokey-gray: hsl(0, 0%, 40%);
+	--neutral-off-black: hsl(0, 0%, 10%);
+
+	/*font-family*/
+	--font-poppins: "Poppins", system-ui,sans-serif;
+
+
+}

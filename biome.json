@@ -15,8 +15,8 @@
 		"formatWithErrors": false,
 		"indentStyle": "tab",
 		"indentWidth": 4,
-		"lineEnding": "lf",
-		"lineWidth": 120
+		"lineEnding": "lf"
+
 	},
 	"organizeImports": {
 		"enabled": true
@@ -39,18 +39,17 @@
 			"quoteStyle": "single",
 			"jsxQuoteStyle": "single",
 			"trailingCommas": "es5",
-			"semicolons": "always"
+			"semicolons": "always",
+			"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineEnding": "lf"
 		}
 	},
 	"overrides": [
 		{
 			"include": ["*.astro"],
 			"linter": {
-				"rules": {
-					"style": {
-						"useImportType": "off"
-					}
-				}
+				"enabled": false
 			}
 		}
 	]
