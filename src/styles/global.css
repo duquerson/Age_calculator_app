@@ -32,6 +32,8 @@
 
 	/*font-family*/
 	--font-poppins: "Poppins", system-ui,sans-serif;
-
-
+	--text-sm: 2rem;
+}
+.container{
+	@apply bg-gray-100 h-dvh flex flex-col justify-center items-center font-sans text-sm
 }

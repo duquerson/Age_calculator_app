@@ -1,0 +1,21 @@
+---
+interface Props {
+	label: string;
+	inputId: string;
+	placeholder: string;
+	maxlength: string;
+	errorId: string;
+	Input: {
+		min: string;
+		max: string;
+	};
+}
+
+const { label, inputId, placeholder, maxlength, errorId, Input } = Astro.props;
+---
+
+<div class="flex flex-col gap-2">
+	<label for={inputId} id={`${inputId}Label`} class="uppercase text-sm font-bold tracking-[0.2em] text-gray-500">{label}</label>
+	<input type="number" name={inputId} id={inputId} placeholder={placeholder} maxlength={maxlength} min={Input.min} max={Input.max} required autocomplete="off" aria-label={label} class="py-3 px-4 font-bold border border-gray-300 rounded-lg outline-none focus:border-purple-500 placeholder:text-gray-500 md:w-40 w-full md:text-2xl text-size" />
+	<span class="text-xs text-red-500 mb-2 min-h-6 italic" id={errorId}> </span>
+</div>

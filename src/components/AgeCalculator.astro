@@ -1,56 +1,69 @@
 ---
-
+import InputGroup from "./InputGroup.astro";
+import ResultsGroup from "./ResultsGroup.astro";
+import { format } from "@formkit/tempo";
+const currentYear = format(new Date(), "YYYY");
 ---
 
-<div class="calculator-container">
-	<form id="ageCalculator" class="calculator-form">
-		<div class="input-group">
-			<div class="input-field">
-				<label for="day">DÍA</label>
-				<input type="number" id="day" name="day" placeholder="DD" min="1" max="31" required />
-				<span class="error-message" id="dayError"></span>
-			</div>
-
-			<div class="input-field">
-				<label for="month">MES</label>
-				<input type="number" id="month" name="month" placeholder="MM" min="1" max="12" required />
-				<span class="error-message" id="monthError"></span>
-			</div>
-
-			<div class="input-field">
-				<label for="year">AÑO</label>
-				<input type="number" id="year" name="year" placeholder="YYYY" min="1900" required />
-				<span class="error-message" id="yearError"></span>
-			</div>
+<main class="bg-white rounded-[24px] rounded-br-[200px] p-12 max-w-[840px] mx-auto shadow-[0_0_100px_rgba(0,0,0,0.1)] max-[767px]:p-8 max-[767px]:px-6 max-[767px]:rounded-br-[100px] max-[767px]:max-w-none max-[767px]:mx-0 max-[767px]:shadow-none">
+	<form id="age_form" class="flex flex-col">
+		<!-- Inputs: gap grande en desktop, pequeño en mobile -->
+		<div class="flex gap-8 max-[767px]:gap-4">
+			<InputGroup
+				label="Day"
+				inputId="day"
+				placeholder="DD"
+				maxlength="2"
+				errorId="dayError"
+				Input={{
+					min: "1",
+					max: "31",
+				}}
+			/>
+			<InputGroup
+				label="Month"
+				inputId="month"
+				placeholder="MM"
+				maxlength="2"
+				errorId="monthError"
+				Input={{
+					min: "1",
+					max: "12",
+				}}
+			/>
+			<InputGroup
+				label="Year"
+				inputId="year"
+				placeholder="YYYY"
+				maxlength="4"
+				errorId="yearError"
+				Input={{
+					min: "1900",
+					max: currentYear,
+				}}
+			/>
 		</div>
 
-		<div class="divider">
-			<button type="submit" class="submit-button">
-				<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
-					<g fill="none" stroke="#FFF" stroke-width="2">
-						<path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"></path>
-					</g>
-				</svg>
+		<!-- Divider con botón -->
+		<div class="relative flex items-center before:content-[''] before:flex-1 before:h-px before:bg-gray-300">
+			<button type="submit" class="bg-purple-500 border-0 rounded-full w-24 h-24 flex items-center justify-center cursor-pointer transition-colors duration-300 hover:bg-black relative max-[767px]:w-16 max-[767px]:h-16 max-[767px]:absolute max-[767px]:left-1/2 max-[767px]:-translate-x-1/2" aria-label="Calculate age">
+				<img src="/images/icon-arrow.svg" class="w-10 h-10 max-[767px]:w-8 max-[767px]:h-8" alt="arrow down" />
 			</button>
 		</div>
 
-		<div class="results">
-			<div class="result-item">
-				<span class="result-number" id="years">--</span>
-				<span class="result-label">años</span>
-			</div>
-			<div class="result-item">
-				<span class="result-number" id="months">--</span>
-				<span class="result-label">meses</span>
-			</div>
-			<div class="result-item">
-				<span class="result-number" id="days">--</span>
-				<span class="result-label">días</span>
-			</div>
-		</div>
+		<!-- Resultados -->
+		<section class="flex flex-col gap-2">
+			<ResultsGroup id="yearsResult" text="years" />
+			<ResultsGroup id="monthsResult" text="months" />
+			<ResultsGroup id="daysResult" text="days" />
+		</section>
 	</form>
-</div>
+</main>
 
+<div class="pt-8 text-center">
+	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Duquerson</a>.
+</div>
+<script src="../scripts/ageCalculator.ts"></script>
 <style>
 	.calculator-container {
 		background-color: white;
