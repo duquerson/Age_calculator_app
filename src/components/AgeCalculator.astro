@@ -5,10 +5,9 @@ import { format } from "@formkit/tempo";
 const currentYear = format(new Date(), "YYYY");
 ---
 
-<main class="bg-white rounded-[24px] rounded-br-[200px] p-12 max-w-[840px] mx-auto shadow-[0_0_100px_rgba(0,0,0,0.1)] max-[767px]:p-8 max-[767px]:px-6 max-[767px]:rounded-br-[100px] max-[767px]:max-w-none max-[767px]:mx-0 max-[767px]:shadow-none">
-	<form id="age_form" class="flex flex-col">
-		<!-- Inputs: gap grande en desktop, pequeño en mobile -->
-		<div class="flex gap-8 max-[767px]:gap-4">
+<main class="container__ageCalculator">
+	<form id="age_form" class="container__form">
+		<div class="container__inputGroup">
 			<InputGroup
 				label="Day"
 				inputId="day"
@@ -44,15 +43,13 @@ const currentYear = format(new Date(), "YYYY");
 			/>
 		</div>
 
-		<!-- Divider con botón -->
-		<div class="relative flex items-center before:content-[''] before:flex-1 before:h-px before:bg-gray-300">
-			<button type="submit" class="bg-purple-500 border-0 rounded-full w-24 h-24 flex items-center justify-center cursor-pointer transition-colors duration-300 hover:bg-black relative max-[767px]:w-16 max-[767px]:h-16 max-[767px]:absolute max-[767px]:left-1/2 max-[767px]:-translate-x-1/2" aria-label="Calculate age">
-				<img src="/images/icon-arrow.svg" class="w-10 h-10 max-[767px]:w-8 max-[767px]:h-8" alt="arrow down" />
+		<div class="container__button">
+			<button type="submit" class="buttonArrow" aria-label="Calculate age">
+				<img src="/images/icon-arrow.svg" class="container__button--img" alt="arrow down" />
 			</button>
 		</div>
 
-		<!-- Resultados -->
-		<section class="flex flex-col gap-2">
+		<section class="container__resultsGroup">
 			<ResultsGroup id="yearsResult" text="years" />
 			<ResultsGroup id="monthsResult" text="months" />
 			<ResultsGroup id="daysResult" text="days" />
@@ -60,7 +57,7 @@ const currentYear = format(new Date(), "YYYY");
 	</form>
 </main>
 
-<div class="pt-8 text-center">
+<div class="pt-4 text-center text-xs italic font-mono text-balance">
 	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Duquerson</a>.
 </div>
 <script src="../scripts/ageCalculator.ts"></script>

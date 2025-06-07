@@ -37,3 +37,36 @@
 .container{
 	@apply bg-gray-100 h-dvh flex flex-col justify-center items-center font-sans text-sm
 }
+.container__ageCalculator{
+	@apply bg-white rounded-3xl rounded-br-[8.5rem] py-10 px-7 w-96 h-[35.5rem]
+}
+.container__form{
+	@apply flex flex-col
+}
+.container__inputGroup{
+	@apply flex gap-x-4 justify-center mb-8
+}
+.container__input{
+	@apply flex flex-col gap-3
+}
+.container__input--label{
+	@apply uppercase text-xs font-bold text-gray-500
+}
+.container__input--inputNumber{
+	@apply py-3 px-4 font-bold border border-gray-300 rounded-lg outline-none focus:border-purple-500 placeholder:text-gray-500   text-xl w-24
+}
+.container__input--span{
+	@apply text-xs text-red-500 italic
+}
+.container__button{
+	@apply relative mt-2.5 flex items-center before:content-[''] before:flex-1 before:h-px before:bg-gray-300
+}
+.buttonArrow{
+	@apply bg-purple-500 border-0 rounded-full w-16 h-16 flex items-center justify-center cursor-pointer transition-colors duration-300 hover:bg-black relative max-[47.9375rem]:absolute max-[47.9375rem]:left-1/2 max-[47.9375rem]:-translate-x-1/2
+}
+.container__button--img{
+	@apply w-10 h-10 max-[47.9375rem]:w-8 max-[47.9375rem]:h-8
+}
+.container__resultsGroup{
+	@apply flex flex-col gap-2 pt-10
+}
