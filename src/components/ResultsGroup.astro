@@ -8,6 +8,6 @@ const { id, text } = Astro.props;
 ---
 
 <div class="flex items-baseline gap-3">
-	<span class="font-extrabold italic text-purple-500 leading-none text-[4rem]" id={id}>--</span>
-	<span class="text-[4rem] font-extrabold italic text-black">{text}</span>
+	<span class="font-extrabold italic text-purple-500 leading-none text-[4rem] md:text-[4.5rem] md:pr-3" id={id}>- -</span>
+	<span class="text-[4rem] font-extrabold italic text-black md:text-[4.5rem]">{text}</span>
 </div>
