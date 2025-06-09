@@ -6,7 +6,7 @@ const currentYear = format(new Date(), "YYYY");
 ---
 
 <main class="container__ageCalculator">
-	<form id="age_form" class="container__form">
+	<form id="age_form" class="container__form" novalidate>
 		<div class="container__inputGroup">
 			<InputGroup
 				label="Day"
@@ -17,6 +17,7 @@ const currentYear = format(new Date(), "YYYY");
 				Input={{
 					min: "1",
 					max: "31",
+					required: true,
 				}}
 			/>
 			<InputGroup
@@ -28,6 +29,7 @@ const currentYear = format(new Date(), "YYYY");
 				Input={{
 					min: "1",
 					max: "12",
+					required: true,
 				}}
 			/>
 			<InputGroup
@@ -39,6 +41,7 @@ const currentYear = format(new Date(), "YYYY");
 				Input={{
 					min: "1900",
 					max: currentYear,
+					required: true,
 				}}
 			/>
 		</div>
@@ -49,245 +52,18 @@ const currentYear = format(new Date(), "YYYY");
 			</button>
 		</div>
 
-		<section class="container__resultsGroup">
-			<ResultsGroup id="yearsResult" text="years" />
-			<ResultsGroup id="monthsResult" text="months" />
-			<ResultsGroup id="daysResult" text="days" />
+		<section class="container__resultsGroup" aria-live="polite">
+			<ResultsGroup id="years" text="years" />
+			<ResultsGroup id="months" text="months" />
+			<ResultsGroup id="days" text="days" />
 		</section>
 	</form>
 </main>
 
 <div class="pt-4 text-center text-xs italic font-mono text-balance">
-	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Duquerson</a>.
+	Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. Coded by <a href="#">Duquerson</a>.
 </div>
-<script src="../scripts/ageCalculator.ts"></script>
-<style>
-	.calculator-container {
-		background-color: white;
-		border-radius: 24px 24px 200px 24px;
-		padding: 3rem;
-		max-width: 840px;
-		margin: 0 auto;
-		box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-	}
 
-	.calculator-form {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.input-group {
-		display: flex;
-		gap: 2rem;
-	}
-
-	.input-field {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	label {
-		text-transform: uppercase;
-		font-size: 0.875rem;
-		font-weight: 700;
-		color: #716f6f;
-		letter-spacing: 0.25em;
-	}
-
-	input {
-		width: 160px;
-		padding: 0.75rem 1rem;
-		font-size: 2rem;
-		font-weight: 700;
-		border: 1px solid #dcdcdc;
-		border-radius: 8px;
-		outline: none;
-	}
-
-	input:focus {
-		border-color: #854dff;
-	}
-
-	input::placeholder {
-		color: #716f6f;
-	}
-
-	.error-message {
-		color: #ff5959;
-		font-size: 0.875rem;
-		font-style: italic;
-		min-height: 1.5rem;
-	}
-
-	.divider {
-		position: relative;
-		display: flex;
-		align-items: center;
-	}
-
-	.divider::before {
-		content: "";
-		flex: 1;
-		height: 1px;
-		background-color: #dcdcdc;
-	}
-
-	.submit-button {
-		background-color: #854dff;
-		border: none;
-		border-radius: 50%;
-		width: 96px;
-		height: 96px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		transition: background-color 0.3s;
-	}
-
-	.submit-button:hover {
-		background-color: #151515;
-	}
-
-	.results {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.result-item {
-		display: flex;
-		align-items: baseline;
-		gap: 0.5rem;
-	}
-
-	.result-number {
-		font-size: 6.5rem;
-		font-weight: 800;
-		font-style: italic;
-		color: #854dff;
-		line-height: 1;
-	}
-
-	.result-label {
-		font-size: 6.5rem;
-		font-weight: 800;
-		font-style: italic;
-		color: #151515;
-	}
-
-	@media (max-width: 768px) {
-		.calculator-container {
-			padding: 2rem 1.5rem;
-			border-radius: 24px 24px 100px 24px;
-		}
-
-		.input-group {
-			gap: 1rem;
-		}
-
-		input {
-			width: 100%;
-			font-size: 1.5rem;
-		}
-
-		.submit-button {
-			width: 64px;
-			height: 64px;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-
-		.submit-button svg {
-			width: 32px;
-			height: 32px;
-		}
-
-		.result-number,
-		.result-label {
-			font-size: 3.5rem;
-		}
-	}
-</style>
 <script>
-	document.getElementById("ageCalculator").addEventListener("submit", function (e) {
-		e.preventDefault();
-
-		const day = parseInt(document.getElementById("day").value);
-		const month = parseInt(document.getElementById("month").value);
-		const year = parseInt(document.getElementById("year").value);
-
-		// Resetear mensajes de error
-		document.querySelectorAll(".error-message").forEach((el) => (el.textContent = ""));
-
-		// Validaciones
-		let isValid = true;
-
-		if (!day || day < 1 || day > 31) {
-			document.getElementById("dayError").textContent = "Día inválido";
-			isValid = false;
-		}
-
-		if (!month || month < 1 || month > 12) {
-			document.getElementById("monthError").textContent = "Mes inválido";
-			isValid = false;
-		}
-
-		if (!year || year > new Date().getFullYear()) {
-			document.getElementById("yearError").textContent = "Año inválido";
-			isValid = false;
-		}
-
-		// Validar fecha válida
-		const date = new Date(year, month - 1, day);
-		if (date.getMonth() !== month - 1) {
-			document.getElementById("dayError").textContent = "Fecha inválida";
-			isValid = false;
-		}
-
-		if (isValid) {
-			const today = new Date();
-			const birthDate = new Date(year, month - 1, day);
-
-			let years = today.getFullYear() - birthDate.getFullYear();
-			let months = today.getMonth() - birthDate.getMonth();
-			let days = today.getDate() - birthDate.getDate();
-
-			if (days < 0) {
-				months--;
-				days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-			}
-
-			if (months < 0) {
-				years--;
-				months += 12;
-			}
-
-			// Animación de números
-			animateNumber("years", years);
-			animateNumber("months", months);
-			animateNumber("days", days);
-		}
-	});
-
-	function animateNumber(elementId, finalValue) {
-		const element = document.getElementById(elementId);
-		const duration = 1000; // 1 segundo
-		const steps = 60;
-		const stepDuration = duration / steps;
-		let currentValue = 0;
-
-		const interval = setInterval(() => {
-			currentValue += finalValue / steps;
-			if (currentValue >= finalValue) {
-				element.textContent = finalValue;
-				clearInterval(interval);
-			} else {
-				element.textContent = Math.floor(currentValue);
-			}
-		}, stepDuration);
-	}
+	import "../scripts/ageCalculator.ts";
 </script>

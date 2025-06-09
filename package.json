@@ -12,15 +12,23 @@
     "format": "biome format .",
     "format:fix": "biome format --write .",
     "check": "biome check .",
-    "check:fix": "biome check --write ."
+    "check:fix": "biome check --write .",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@formkit/tempo": "^0.1.2",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.0",
+    "countup.js": "^2.9.0",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "^1.9.4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.2"
   }
 }
