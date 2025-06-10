@@ -2,6 +2,11 @@
 
 ![Vista previa del diseño de la Calculadora de Edad](./design/desktop-preview.jpg)
 
+## Enlaces
+
+- [Solución en vivo](https://age-calculator-app-five-mocha.vercel.app/)
+- [Código fuente](https://github.com/duquerson/Age_calculator_app)
+
 ## Descripción
 
 Este proyecto es una solución al desafío de Frontend Mentor para crear una calculadora de edad. La aplicación permite a los usuarios calcular su edad exacta en años, meses y días a partir de su fecha de nacimiento.
@@ -83,7 +88,16 @@ Durante el desarrollo de este proyecto, he mejorado mis habilidades en:
 
 ## Autor
 
-[Tu Nombre]
+**Yeferson Soto**
+
+- GitHub: [@duquerson](https://github.com/duquerson)
+- LinkedIn: [Yeferson Soto](https://www.linkedin.com/in/duquerson/)
+
+## Contacto
+
+Si tienes alguna pregunta o sugerencia sobre el proyecto, no dudes en contactarme a través de:
+- [LinkedIn](https://www.linkedin.com/in/duquerson/)
+- [GitHub](https://github.com/duquerson)
 
 ## Licencia
 
@@ -91,4 +105,4 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 
 ---
 
-Desarrollado con ❤️ como parte de los desafíos de [Frontend Mentor](https://www.frontendmentor.io)
+Desarrollado con ❤️ como parte de los desafíos de [Frontend Mentor](https://www.frontendmentor.io) 
