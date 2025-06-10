@@ -1,48 +1,94 @@
-# Astro Starter Kit: Basics
+# Calculadora de Edad - Frontend Mentor Challenge
 
-```sh
-pnpm create astro@latest -- --template basics
+![Vista previa del diseño de la Calculadora de Edad](./design/desktop-preview.jpg)
+
+## Descripción
+
+Este proyecto es una solución al desafío de Frontend Mentor para crear una calculadora de edad. La aplicación permite a los usuarios calcular su edad exacta en años, meses y días a partir de su fecha de nacimiento.
+
+## Características
+
+- 🎯 Cálculo preciso de edad en años, meses y días
+- ✅ Validación completa de fechas
+- 📱 Diseño responsive para móvil y escritorio
+- 🎨 Interfaz moderna y atractiva
+- ⚡ Animaciones suaves en los resultados
+
+## Tecnologías Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Diseño responsive con CSS Grid y Flexbox
+
+## Funcionalidades Implementadas
+
+- Validación de formularios en tiempo real
+- Cálculo preciso de edad
+- Manejo de errores para:
+  - Campos vacíos
+  - Días inválidos (1-31)
+  - Meses inválidos (1-12)
+  - Fechas futuras
+  - Fechas inexistentes (ej: 31/04/1991)
+- Diseño responsive
+- Estados hover y focus en elementos interactivos
+- Animaciones en los números del resultado
+
+## Estructura del Proyecto
+
+```
+age-calculator/
+├── assets/
+│   └── fonts/
+├── design/
+│   ├── desktop-preview.jpg
+│   └── mobile-design.jpg
+├── index.html
+├── styles.css
+└── script.js
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Cómo Usar
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Clona este repositorio
+2. Abre `index.html` en tu navegador
+3. Ingresa tu fecha de nacimiento
+4. Haz clic en el botón de calcular
+5. ¡Ve tu edad calculada!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Aprendizajes
 
-## 🚀 Project Structure
+Durante el desarrollo de este proyecto, he mejorado mis habilidades en:
+- Validación de formularios
+- Manipulación de fechas en JavaScript
+- Diseño responsive
+- Animaciones CSS
+- Manejo de estados y errores
 
-Inside of your Astro project, you'll see the following folders and files:
+## Desafíos y Soluciones
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Desafío**: Implementar validación precisa de fechas
+  **Solución**: Creación de un sistema de validación que considera años bisiestos y días por mes
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- **Desafío**: Animaciones suaves en los números
+  **Solución**: Implementación de animaciones CSS personalizadas
 
-## 🧞 Commands
+## Mejoras Futuras
 
-All commands are run from the root of the project, from a terminal:
+- [ ] Añadir soporte para múltiples idiomas
+- [ ] Implementar tema oscuro
+- [ ] Añadir más opciones de personalización
+- [ ] Mejorar la accesibilidad
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Autor
 
-## 👀 Want to learn more?
+[Tu Nombre]
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
+
+---
+
+Desarrollado con ❤️ como parte de los desafíos de [Frontend Mentor](https://www.frontendmentor.io)
